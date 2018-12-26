@@ -34,6 +34,7 @@
             <optional>true</optional>
         </dependency>
 
+        <!--Database spport-->
         <!-- JPA Data (We are going to use Repositories, Entities, Hibernate, etc...) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -44,13 +45,18 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
-
+        <!--PostgreSQL Connector-->
         <!--<dependency>-->
             <!--<groupId>org.postgresql</groupId>-->
             <!--<artifactId>postgresql</artifactId>-->
             <!--<scope>runtime</scope>-->
         <!--</dependency>-->
 
+        <!--security-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
     </dependencies>
 
     <properties>
