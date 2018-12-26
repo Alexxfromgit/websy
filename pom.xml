@@ -19,14 +19,19 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!--Uncomment when ready to use tymeleaf-->
+        <!--Uncomment when ready to use thymeleaf-->
         <!--<dependency>-->
             <!--<groupId>org.springframework.boot</groupId>-->
             <!--<artifactId>spring-boot-starter-thymeleaf</artifactId>-->
         <!--</dependency>-->
+        <!--Deprecated usage mustache-->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-mustache</artifactId>-->
+        <!--</dependency>-->
         <dependency>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-mustache</artifactId>
+        <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -34,7 +39,7 @@
             <optional>true</optional>
         </dependency>
 
-        <!--Database spport-->
+        <!--Database support-->
         <!-- JPA Data (We are going to use Repositories, Entities, Hibernate, etc...) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
