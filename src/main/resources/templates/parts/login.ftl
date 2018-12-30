@@ -1,6 +1,6 @@
 <#macro login path isRegisterForm>
 
-    <form action="${path}" method="post">
+<form action="${path}" method="post" xmlns="http://www.w3.org/1999/html">
         <div class="form-group row">
             <label class="col-sm-2 col-form-label"> User Name :</label>
             <div class="col-sm-4">
@@ -54,6 +54,14 @@
                     </#if>
             </div>
         </div>
+    <div class="col-sm-4">
+        <div class="g-recaptcha" data-sitekey="6LdtwYUUAAAAAGgZRDGkD_I6fCuGXVX4KbNB8Bgs"></div>
+            <#if captchaError??>
+            <div class="alert alert-danger" role="alert">
+                ${captchaError}
+            </div>
+            </#if>
+    </div>
     </#if>
         <input type="hidden" name="_csrf" value="${_csrf.token}"/>
         <#if !isRegisterForm>
