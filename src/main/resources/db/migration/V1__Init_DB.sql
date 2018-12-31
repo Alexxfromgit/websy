@@ -1,31 +1,30 @@
-create table message (
-    id bigint not null,
-    filename varchar(255),
-    tag varchar(255),
-    text varchar(2048) not null,
-    user_id bigint,
-    primary key (id)
-) engine=MyISAM;
+CREATE TABLE message (
+    id bigint NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    filename VARCHAR(255) DEFAULT NULL,
+    tag VARCHAR(255) DEFAULT NULL,
+    text VARCHAR(2048) NOT NULL,
+    user_id bigint
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 create table user_role (
-    user_id bigint not null,
-    roles varchar(255)
-) engine=MyISAM;
+    user_id bigint NOT NULL,
+    roles VARCHAR(255)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 create table usr (
-    id bigint not null,
-    activation_code varchar(255),
-    active bit not null,
-    email varchar(255),
-    password varchar(255) not null,
-    username varchar(255) not null,
-    primary key (id)
-) engine=MyISAM;
+    id bigint NOT NULL,
+    activation_code VARCHAR(255) DEFAULT NULL,
+    active bit NOT NULL,
+    email VARCHAR(255) DEFAULT NULL,
+    password VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-alter table message
-    add constraint message_user_fk
-    foreign key (user_id) references usr (id);
+ALTER TABLE message
+    ADD CONSTRAINT message_user_fk
+    FOREIGN KEY (user_id) REFERENCES usr (id);
 
-alter table user_role
-    add constraint user_role_fk
-    foreign key (user_id) references usr (id);
+ALTER TABLE user_role
+    ADD CONSTRAINT user_role_fk
+    FOREIGN KEY (user_id) REFERENCES usr (id);
