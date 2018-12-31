@@ -12,13 +12,12 @@ create table user_role (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 create table usr (
-    id bigint NOT NULL,
+    id bigint NOT NULL AUTO_INCREMENT PRIMARY KEY,
     activation_code VARCHAR(255) DEFAULT NULL,
     active bit NOT NULL,
     email VARCHAR(255) DEFAULT NULL,
     password VARCHAR(255) NOT NULL,
-    username VARCHAR(255) NOT NULL UNIQUE,
-    PRIMARY KEY (id)
+    username VARCHAR(255) NOT NULL UNIQUE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 ALTER TABLE message
