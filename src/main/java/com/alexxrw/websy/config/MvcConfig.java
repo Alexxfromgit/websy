@@ -15,7 +15,7 @@ public class MvcConfig implements WebMvcConfigurer {
     private String uploadPath;
 
     @Bean
-    public RestTemplate getRestTemplate(){
+    public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
 

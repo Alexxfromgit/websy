@@ -47,7 +47,7 @@ public class RegistrationController {
         String url = String.format(CAPTCHA_URL, secret, captchaResponse);
         CaptchaResponseDto response = restTemplate.postForObject(url, Collections.emptyList(), CaptchaResponseDto.class);
 
-        if (!response.isSuccess()){
+        if (!response.isSuccess()) {
             model.addAttribute("captchaError", "Fill captcha");
         }
 
@@ -89,5 +89,4 @@ public class RegistrationController {
 
         return "login";
     }
-
 }

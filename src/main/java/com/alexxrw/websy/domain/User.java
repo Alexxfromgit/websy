@@ -41,16 +41,16 @@ public class User implements UserDetails {
     @ManyToMany
     @JoinTable(
             name = "user_subscriptions",
-            joinColumns = { @JoinColumn(name = "channel_id")},
-            inverseJoinColumns = { @JoinColumn(name = "subscriber_id")}
+            joinColumns = {@JoinColumn(name = "channel_id")},
+            inverseJoinColumns = {@JoinColumn(name = "subscriber_id")}
     )
     private Set<User> subscribers = new HashSet<>();
 
     @ManyToMany
     @JoinTable(
             name = "user_subscriptions",
-            joinColumns = { @JoinColumn(name = "subscriber_id")},
-            inverseJoinColumns = { @JoinColumn(name = "channel_id")}
+            joinColumns = {@JoinColumn(name = "subscriber_id")},
+            inverseJoinColumns = {@JoinColumn(name = "channel_id")}
     )
     private Set<User> subscriptions = new HashSet<>();
 
@@ -68,7 +68,7 @@ public class User implements UserDetails {
         return Objects.hash(id);
     }
 
-    public boolean isAdmin(){
+    public boolean isAdmin() {
         return roles.contains(Role.ADMIN);
     }
 
