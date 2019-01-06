@@ -1,19 +1,6 @@
-<#import "parts/common.ftl" as c>
-
-<@c.page>
-<div class="form-row">
-    <div class="form-group col-md-6">
-        <form method="get" action="/main" class="form-inline">
-            <input type="text" name="filter" class="form-control" value="${filter?ifExists}"
-                   placeholder="Search by tag">
-            <button type="submit" class="btn btn-primary ml-2">Search</button>
-        </form>
-    </div>
-</div>
-
 <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
    aria-controls="collapseExample">
-    Add new message
+    Message Editor
 </a>
     <div class="collapse <#if message??>show</#if>" id="collapseExample">
         <div class="form-group mt-3">
@@ -43,19 +30,10 @@
                     </div>
                 </div>
                 <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                <input type="hidden" name="id" value="<#if message??>{message.id}</#if>"/>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Add</button>
+                    <button type="submit" class="btn btn-primary">Save message</button>
                 </div>
             </form>
         </div>
     </div>
-
-<#include "parts/messageEdit.ftl" />
-
-<#include "parts/messageList.ftl" />
-
-</@c.page>
-
-
-
-
