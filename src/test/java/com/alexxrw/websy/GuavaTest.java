@@ -147,7 +147,6 @@ public class GuavaTest {
 
     @Test
     public void testI() {
-
         HashBasedTable<String, String, Double> table = HashBasedTable.create();
 
         table.put("Mike", "2017-11-15", 2000.0);
