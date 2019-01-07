@@ -2,7 +2,9 @@ package com.alexxrw.websy.service;
 
 import com.alexxrw.websy.domain.Role;
 import com.alexxrw.websy.domain.User;
+import com.alexxrw.websy.events.SendMailEvent;
 import com.alexxrw.websy.repos.UserRepo;
+import com.google.common.eventbus.EventBus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,7 +24,7 @@ public class UserService implements UserDetailsService {
     private UserRepo userRepo;
 
     @Autowired
-    private MailSender mailSender;
+    private EventBus eventBus;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -71,7 +73,7 @@ public class UserService implements UserDetailsService {
                     user.getActivationCode()
             );
 
-            mailSender.send(user.getEmail(),"Activation code", message);
+            eventBus.post(new SendMailEvent(user.getEmail(),"Activation code", message));
         }
     }
 
