@@ -1,10 +1,12 @@
 <p align="center">
   <img src="https://i.ibb.co/wrhD825/spring-by-pivotal-9066b55828deb3c10e27e609af322c40.png">
   
-  # -Websy
+  ![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)
+  
+  # Websy
   Web application for deploying on linux server.
 
-  App build #0.1.3
+  **App build #0.1.3**
   </p>
 
 # About Application
