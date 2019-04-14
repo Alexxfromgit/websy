@@ -33,7 +33,7 @@
             </div>
         </div>
     <#else>
-        No message
+        No messages
     </#list>
 </div>
 

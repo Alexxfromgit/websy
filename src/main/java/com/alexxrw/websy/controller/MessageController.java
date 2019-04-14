@@ -106,7 +106,7 @@ public class MessageController {
     }
 
     @GetMapping("/user-messages/{author}")
-    public String userMessges(
+    public String userMessages(
             @AuthenticationPrincipal User currentUser,
             @PathVariable User author,
             Model model,
