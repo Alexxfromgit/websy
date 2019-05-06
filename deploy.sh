@@ -6,11 +6,11 @@ echo "Copy files.."
 
 scp -i ~/.ssh/id_rsa \
     target/websy-1.0-SNAPSHOT.jar \
-    d5enemy@34.83.55.248:/home/d5enemy/
+    alexx_rw@35.246.185.137:/home/alexx_rw/
 
 echo "Restart server.."
 
-ssh -i ~/.ssh/id_rsa d5enemy@34.83.55.248 << EOF
+ssh -i ~/.ssh/id_rsa alexx_rw@35.246.185.137 << EOF
 
 mkdir uploads
 pgrep java | xargs kill -9
