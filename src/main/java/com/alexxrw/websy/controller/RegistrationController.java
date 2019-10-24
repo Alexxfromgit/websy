@@ -71,7 +71,6 @@ public class RegistrationController {
             model.addAttribute("usernameError", "User already exists!");
             return "registration";
         }
-
         return "redirect:/login";
     }
 
@@ -86,7 +85,6 @@ public class RegistrationController {
             model.addAttribute("messageType", "danger");
             model.addAttribute("message", "Activation code is not found");
         }
-
         return "login";
     }
 }
