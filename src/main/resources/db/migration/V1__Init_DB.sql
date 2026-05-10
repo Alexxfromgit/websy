@@ -6,12 +6,12 @@ CREATE TABLE message (
     user_id bigint
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-create table user_role (
+CREATE TABLE user_role (
     user_id bigint NOT NULL,
     roles VARCHAR(255)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-create table usr (
+CREATE TABLE usr (
     id bigint NOT NULL AUTO_INCREMENT PRIMARY KEY,
     activation_code VARCHAR(255) DEFAULT NULL,
     active bit NOT NULL,
